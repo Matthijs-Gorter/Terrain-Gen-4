@@ -24,15 +24,32 @@ class GameController: NSObject, SCNSceneRendererDelegate {
     
     init(sceneRenderer renderer: SCNSceneRenderer) {
         sceneRenderer = renderer
-        scene = SCNScene(named: "Art.scnassets/ship.scn")!
+        scene = SCNScene()
+        
+        
+        let mapMesh = CreateMapMesh()
+        let map = SCNNode(geometry: mapMesh)
+        scene.rootNode.addChildNode(map)
+        
+        // light
+        let ambientLightNode = SCNNode()
+        ambientLightNode.light = SCNLight()
+        ambientLightNode.light!.type = SCNLight.LightType.ambient
+        ambientLightNode.light!.color = SCNColor(white: 0.33, alpha: 1.0)
+        scene.rootNode.addChildNode(ambientLightNode)
+        
+        let omniLightNode = SCNNode()
+        omniLightNode.light = SCNLight()
+        omniLightNode.light!.type = SCNLight.LightType.omni
+        omniLightNode.light!.color = SCNColor(white: 0.75, alpha: 1.0)
+        omniLightNode.position = SCNVector3Make(0, 25, 50)
+        scene.rootNode.addChildNode(omniLightNode)
+        sceneRenderer.scene = scene
+        
         
         super.init()
         
         sceneRenderer.delegate = self
-        
-        if let ship = scene.rootNode.childNode(withName: "ship", recursively: true) {
-            ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
-        }
         
         sceneRenderer.scene = scene
     }
@@ -41,6 +58,7 @@ class GameController: NSObject, SCNSceneRendererDelegate {
         let hitResults = self.sceneRenderer.hitTest(point, options: [:])
         for result in hitResults {
             // get its material
+            print(result.node.name as Any)
             guard let material = result.node.geometry?.firstMaterial else {
                 return
             }
@@ -68,5 +86,4 @@ class GameController: NSObject, SCNSceneRendererDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         // Called before each frame is rendered
     }
-
 }

@@ -21,18 +21,16 @@
 		7FBC1CFD28C7A55600E75ECE /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC1CCB28C7A55100E75ECE /* GameController.swift */; };
 		7FBC1CFE28C7A55600E75ECE /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC1CCB28C7A55100E75ECE /* GameController.swift */; };
 		7FBC1CFF28C7A55600E75ECE /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC1CCB28C7A55100E75ECE /* GameController.swift */; };
-		7FBC1D0028C7A55600E75ECE /* Art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBC1CCC28C7A55100E75ECE /* Art.scnassets */; };
-		7FBC1D0128C7A55600E75ECE /* Art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBC1CCC28C7A55100E75ECE /* Art.scnassets */; };
-		7FBC1D0228C7A55600E75ECE /* Art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBC1CCC28C7A55100E75ECE /* Art.scnassets */; };
-		7FBC1D0328C7A55600E75ECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBC1CCD28C7A55600E75ECE /* Assets.xcassets */; };
-		7FBC1D0428C7A55600E75ECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBC1CCD28C7A55600E75ECE /* Assets.xcassets */; };
-		7FBC1D0528C7A55600E75ECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBC1CCD28C7A55600E75ECE /* Assets.xcassets */; };
+		7FBC1D1228C7BA5700E75ECE /* GameBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC1D1128C7BA5700E75ECE /* GameBrain.swift */; };
+		7FBC1D1328C7BA5700E75ECE /* GameBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC1D1128C7BA5700E75ECE /* GameBrain.swift */; };
+		7FBC1D1428C7BA5700E75ECE /* GameBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC1D1128C7BA5700E75ECE /* GameBrain.swift */; };
+		7FBC1D1628C7C31D00E75ECE /* PerlinNoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC1D1528C7C31D00E75ECE /* PerlinNoise.swift */; };
+		7FBC1D1728C7C31D00E75ECE /* PerlinNoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC1D1528C7C31D00E75ECE /* PerlinNoise.swift */; };
+		7FBC1D1828C7C31D00E75ECE /* PerlinNoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBC1D1528C7C31D00E75ECE /* PerlinNoise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7FBC1CCB28C7A55100E75ECE /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
-		7FBC1CCC28C7A55100E75ECE /* Art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Art.scnassets; sourceTree = "<group>"; };
-		7FBC1CCD28C7A55600E75ECE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FBC1CD228C7A55600E75ECE /* Terrain-Gen-4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Terrain-Gen-4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBC1CD528C7A55600E75ECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FBC1CD728C7A55600E75ECE /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +46,8 @@
 		7FBC1CF728C7A55600E75ECE /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		7FBC1CFA28C7A55600E75ECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7FBC1CFC28C7A55600E75ECE /* Terrain_Gen_4_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Terrain_Gen_4_macOS.entitlements; sourceTree = "<group>"; };
+		7FBC1D1128C7BA5700E75ECE /* GameBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBrain.swift; sourceTree = "<group>"; };
+		7FBC1D1528C7C31D00E75ECE /* PerlinNoise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerlinNoise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				7FBC1CCB28C7A55100E75ECE /* GameController.swift */,
-				7FBC1CCC28C7A55100E75ECE /* Art.scnassets */,
-				7FBC1CCD28C7A55600E75ECE /* Assets.xcassets */,
+				7FBC1D1128C7BA5700E75ECE /* GameBrain.swift */,
+				7FBC1D1528C7C31D00E75ECE /* PerlinNoise.swift */,
 			);
 			path = "Terrain-Gen-4 Shared";
 			sourceTree = "<group>";
@@ -241,8 +241,6 @@
 			files = (
 				7FBC1CDB28C7A55600E75ECE /* Main.storyboard in Resources */,
 				7FBC1CDE28C7A55600E75ECE /* LaunchScreen.storyboard in Resources */,
-				7FBC1D0328C7A55600E75ECE /* Assets.xcassets in Resources */,
-				7FBC1D0028C7A55600E75ECE /* Art.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,8 +250,6 @@
 			files = (
 				7FBC1CEB28C7A55600E75ECE /* Main.storyboard in Resources */,
 				7FBC1CEE28C7A55600E75ECE /* LaunchScreen.storyboard in Resources */,
-				7FBC1D0428C7A55600E75ECE /* Assets.xcassets in Resources */,
-				7FBC1D0128C7A55600E75ECE /* Art.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +258,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FBC1CFB28C7A55600E75ECE /* Main.storyboard in Resources */,
-				7FBC1D0528C7A55600E75ECE /* Assets.xcassets in Resources */,
-				7FBC1D0228C7A55600E75ECE /* Art.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FBC1D1228C7BA5700E75ECE /* GameBrain.swift in Sources */,
 				7FBC1CD828C7A55600E75ECE /* GameViewController.swift in Sources */,
+				7FBC1D1628C7C31D00E75ECE /* PerlinNoise.swift in Sources */,
 				7FBC1CFD28C7A55600E75ECE /* GameController.swift in Sources */,
 				7FBC1CD628C7A55600E75ECE /* AppDelegate.swift in Sources */,
 			);
@@ -284,7 +280,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FBC1D1328C7BA5700E75ECE /* GameBrain.swift in Sources */,
 				7FBC1CE828C7A55600E75ECE /* GameViewController.swift in Sources */,
+				7FBC1D1728C7C31D00E75ECE /* PerlinNoise.swift in Sources */,
 				7FBC1CFE28C7A55600E75ECE /* GameController.swift in Sources */,
 				7FBC1CE628C7A55600E75ECE /* AppDelegate.swift in Sources */,
 			);
@@ -294,7 +292,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FBC1D1428C7BA5700E75ECE /* GameBrain.swift in Sources */,
 				7FBC1CF828C7A55600E75ECE /* GameViewController.swift in Sources */,
+				7FBC1D1828C7C31D00E75ECE /* PerlinNoise.swift in Sources */,
 				7FBC1CFF28C7A55600E75ECE /* GameController.swift in Sources */,
 				7FBC1CF628C7A55600E75ECE /* AppDelegate.swift in Sources */,
 			);
