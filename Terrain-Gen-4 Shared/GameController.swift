@@ -8,17 +8,17 @@
 import SceneKit
 
 #if os(watchOS)
-    import WatchKit
+import WatchKit
 #endif
 
 #if os(macOS)
-    typealias SCNColor = NSColor
+typealias SCNColor = NSColor
 #else
-    typealias SCNColor = UIColor
+typealias SCNColor = UIColor
 #endif
 
 class GameController: NSObject, SCNSceneRendererDelegate {
-
+    
     let scene: SCNScene
     let sceneRenderer: SCNSceneRenderer
     
@@ -26,10 +26,10 @@ class GameController: NSObject, SCNSceneRendererDelegate {
         sceneRenderer = renderer
         scene = SCNScene()
         
-        
-        let mapMesh = CreateMapMesh()
-        let map = SCNNode(geometry: mapMesh)
-        scene.rootNode.addChildNode(map)
+        // chunk
+        let chunkMesh = CreateChunkMesh(dx:0,dy:0)
+        let chunkNode = SCNNode(geometry: chunkMesh)
+        scene.rootNode.addChildNode(chunkNode)
         
         // light
         let ambientLightNode = SCNNode()
@@ -46,8 +46,22 @@ class GameController: NSObject, SCNSceneRendererDelegate {
         scene.rootNode.addChildNode(omniLightNode)
         sceneRenderer.scene = scene
         
+        // cam
+        let cameraNode = SCNNode()
+        cameraNode.camera = SCNCamera()
+        cameraNode.position = SCNVector3(x: 128, y: 128, z: 128)
+        cameraNode.eulerAngles = SCNVector3(1,0,0)
+        cameraNode.camera?.zNear = 0
+        cameraNode.camera?.zFar = 1080
+//        cameraNode.rotation.z = /
+//        cameraNode.name = "cam"
+//        cameraNode.camera?.zFar = 1000
+//        cameraNode.eulerAngles = SCNVector3(x: 0, y: 0, z: 2 * CGFloat.pi)
         
         super.init()
+        
+        sceneRenderer.pointOfView = cameraNode
+//        sceneRenderer.pointOfView?.eulerAngles = SCNVector3(1.4,0,0)
         
         sceneRenderer.delegate = self
         
@@ -83,7 +97,9 @@ class GameController: NSObject, SCNSceneRendererDelegate {
         }
     }
     
+    
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         // Called before each frame is rendered
+//        print(sceneRenderer.pointOfView?.eulerAngles ?? 0)
     }
 }

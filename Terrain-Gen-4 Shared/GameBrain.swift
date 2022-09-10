@@ -1,30 +1,23 @@
 //
 //  GameBrain.swift
-//  Terrain-Gen-4
+//  Terrain-Gen-4 
 //
 //  Created by 144895 on 06/09/2022.
 //
 
 import SceneKit
 
-func CreateMapMesh() -> SCNGeometry {
+func CreateChunkMesh(dx:Int,dy:Int) -> SCNGeometry {
     var vertices : Array<SCNVector3> = []
     var elements : Array<SCNGeometryElement> = []
     var indices : Array<UInt16> = []
     
     let perlinNoise = Perlin2D(seed: "helloworld")
-
-    // 0    1   2   3   4
-    // 5    6   7   8   9
-    // 10   11  12  13  14
-    // 15   16  17  18  19
     
     let size = 256
     for iy in 0..<size {
         for ix in 0..<size {
-            vertices.append(SCNVector3(x: CGFloat(ix), y: CGFloat(iy), z:
-                                        25 - 50 * perlinNoise.noise(x: CGFloat(ix) / 100, y: CGFloat(iy) / 100)))
-//            print(perlinNoise.noise(x: CGFloat(ix) / 100, y: CGFloat(iy) / 100))
+            vertices.append(SCNVector3(x: CGFloat(dx+ix), y: CGFloat(dy+iy), z: 25 - 50 * perlinNoise.noise(x: CGFloat(dx+ix) / 100, y: CGFloat(dy+iy) / 100)))
         }
     }
     
