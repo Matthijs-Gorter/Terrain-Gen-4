@@ -10,38 +10,38 @@ import SceneKit
 
 class GameViewController: UIViewController {
     
-    var gameView: SCNView {
+    var GV: SCNView {
         return self.view as! SCNView
     }
     
-    var gameController: GameController!
+    var GC: GameController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.gameController = GameController(sceneRenderer: gameView)
+        self.GC = GameController(sceneRenderer: GV)
         
         // Allow the user to manipulate the camera
-        self.gameView.allowsCameraControl = true
+        self.GV.allowsCameraControl = true
         
         // Show statistics such as fps and timing information
-        self.gameView.showsStatistics = true
+        self.GV.showsStatistics = true
         
         // Configure the view
-        self.gameView.backgroundColor = UIColor.black
+        self.GV.backgroundColor = UIColor.black
         
         // Add a tap gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        var gestureRecognizers = gameView.gestureRecognizers ?? []
+        var gestureRecognizers = GV.gestureRecognizers ?? []
         gestureRecognizers.insert(tapGesture, at: 0)
-        self.gameView.gestureRecognizers = gestureRecognizers
+        self.GV.gestureRecognizers = gestureRecognizers
     }
     
     @objc
     func handleTap(_ gestureRecognizer: UIGestureRecognizer) {
         // Highlight the tapped nodes
-        let p = gestureRecognizer.location(in: gameView)
-        gameController.highlightNodes(atPoint: p)
+        let p = gestureRecognizer.location(in: GV)
+        GC.highlightNodes(atPoint: p)
     }
     
 }

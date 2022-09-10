@@ -17,7 +17,9 @@ func CreateChunkMesh(dx:Int,dy:Int) -> SCNGeometry {
     let size = 256
     for iy in 0..<size {
         for ix in 0..<size {
-            vertices.append(SCNVector3(x: CGFloat(dx+ix), y: CGFloat(dy+iy), z: 25 - 50 * perlinNoise.noise(x: CGFloat(dx+ix) / 100, y: CGFloat(dy+iy) / 100)))
+//            vertices.append(SCNVector3(x: CGFloat(dx+ix), y: CGFloat(dy+iy), z: 25 - 50 * perlinNoise.noise(x: CGFloat(dx+ix) / 100, y: CGFloat(dy+iy) / 100)))
+            vertices.append(SCNVector3(x: CGFloat(dx+ix), y: CGFloat(dy+iy),
+                                       z: 50 - 100 * pow(perlinNoise.octaveNoise(x: CGFloat(dx+ix) / 100, y: CGFloat(dy+iy) / 100, octaves: 8, persistence: 0.4), 2)))
         }
     }
     
