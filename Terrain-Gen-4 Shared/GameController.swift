@@ -34,13 +34,13 @@ class GameController: NSObject, SCNSceneRendererDelegate {
         
         
         // chunk
-        for ix in 1...7 {
-            for iy in 1...7 {
-                let chunkMesh = CreateChunkMesh(dx:128*ix,dy:128*iy)
+//        for ix in 1...7 {
+//            for iy in 1...7 {
+                let chunkMesh = CreateChunkMesh(dx:0,dy:0)
                 let chunkNode = SCNNode(geometry: chunkMesh)
                 scene.rootNode.addChildNode(chunkNode)
-            }
-        }
+//            }
+//        }
         // light
         let ambientLightNode = SCNNode()
         ambientLightNode.light = SCNLight()
@@ -58,7 +58,7 @@ class GameController: NSObject, SCNSceneRendererDelegate {
         // cam
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(x: 128*4, y: 128*4, z: 128)
+        cameraNode.position = SCNVector3(x: 8, y: 8, z: 8)
         cameraNode.eulerAngles = SCNVector3(1,0,0)
         cameraNode.camera?.zNear = 0
         cameraNode.camera?.zFar = 1080
